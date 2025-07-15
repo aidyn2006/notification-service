@@ -16,9 +16,7 @@ public class NotificationService {
     @Autowired
     public NotificationService(List<SendNotificationUseCase> notifiers) {
         for (SendNotificationUseCase notifier : notifiers) {
-            // Пример: EmailNotificationAdapter.class.getSimpleName() содержит тип
-            // Здесь предполагается, что адаптеры используют разные типы Notification
-            // Нужно реализовать getNotificationType() в адаптерах для полного соответствия Clean Architecture
+
         }
     }
 
