@@ -1,5 +1,6 @@
 package com.example.notificationservice.notification.entity;
 
+import com.example.notificationservice.core.domain.Notification;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PhoneNotification {
+public class PhoneNotification implements Notification {
     
     @Id
     private UUID id;
@@ -28,4 +29,14 @@ public class PhoneNotification {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String getRecipient() {
+        return phoneNumber;
+    }
 }
