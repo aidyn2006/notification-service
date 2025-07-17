@@ -12,7 +12,6 @@ public class NotificationRabbitConsumer {
 
     private final NotificationService notificationService;
 
-    @RabbitListener(queues = "notification_queue")
     public void handleEmail(Notification notification) {
         notificationService.notify(notification);
     }
